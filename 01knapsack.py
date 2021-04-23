@@ -19,7 +19,7 @@ def knapsack(cap, weights, values, n):
                 mat[i][j] = mat[i-1][j]
                 #else current max value is equal to max value of the previous items (n-1...1) at the current weight j
             print(mat, "\n")
-    return mat[-1][-1]
+    return mat[-1][-1] #works same as mat[n][cap]
 
 values = [10, 15, 40]
 weights = [1, 2, 3]
