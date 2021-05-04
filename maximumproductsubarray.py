@@ -1,4 +1,4 @@
-
+#pass one
 def maxProduct(self, nums: [int]) -> int:
     maxpos = nums[0]
     maxneg = nums[0]
@@ -20,3 +20,5 @@ def maxProduct(self, nums: [int]) -> int:
             if(tempneg*nums[i]!=maxpos):
                 maxpos = 1
     return prod
+
+#pass two
