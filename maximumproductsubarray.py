@@ -22,3 +22,17 @@ def maxProduct(self, nums: [int]) -> int:
     return prod
 
 #pass two
+
+def maxProduct2(self, nums: [int]) -> int:
+    if len(nums) == 1:
+        return nums[0]
+    possols = [nums[0]]
+    negsols = [nums[0]]
+    sols = [nums[0]]
+    for i in range(1, len(nums)):
+        negsols.append(min(nums[i], nums[i]*possols[i-1], nums[i]*negsols[i-1]))
+        possols.append(max(nums[i], nums[i]*negsols[i-1], nums[i]*possols[i-1]))
+        sols.append(max(possols[-1], negsols[-1]))
+    #print(possols, "\n", negsols, "\n", sols)
+    return max(sols)
+#over time, revisit
